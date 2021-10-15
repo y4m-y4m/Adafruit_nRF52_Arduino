@@ -1,5 +1,53 @@
 # Adafruit nRF52 Arduino Core Changelog
 
+## 1.1.0 - 2021.09.24
+
+- Add **Adafruit LED Glasses Driver nRF52840** board support
+- Update UUID list
+- Add BLE Gamepad support with `BLEHidGamepad` class and example **Peripheral/blehid_gamepad/blehid_gamepad.ino**
+- Implemnent thread-safe malloc/free using --wrap linker option
+- Update bootloader binaries to 0.6.2
+
+## 1.0.0 - 2021.08.18
+
+Core is stable enough to be released as 1.0.0. Following is chagnes since last release
+
+- Add UART missing baudrate of 31250 and 56000
+- Fix peer bonding with public/static address
+- Fix PDM driver issue when BLE is enabled
+- Update nrfutil binary to post17 for windows 7
+- Add analogSampleTime() to set ADC sample time
+- Add readCPUTemperature() to get CPU die temperature
+- Add analogCalibrateOffset() to calibrate ADC offset
+- Fix UART is not powered down correctly
+- Update included bootlaoder binaries to 0.6.1
+- Update included TinyUSB lib to 1.4.4
+
+## 0.24.0 - 2021.06.25
+
+- Update included TinyUSB libraries to 1.3.0
+
+## 0.23.0 - 2021.06.22
+
+- Fix CryptoCell usage issue that prevent mcu to go to sleep causing high power consumption
+- separate pairing_passkey with and without arcada
+- Add back `Raytac MDBT50Q - RX` variant
+- Remove Bluefruit.setName() from most examples for it to use default board name
+- Update CMSIS from 5.4.0 to 5.7.0
+- Fix build with TensorFlowLite v2.4.0
+- Update included Adafruit_nRFCrypto to 0.0.5
+- Update included Adafruit_TinyUSB_Arduino to 1.1.0
+- Update include bootloader binaries to 0.6.0
+- Enable usage of DSP libmath
+- Added/Ported tf4micro-motion-kit project
+- Update BLEUuid
+  - Add from string style constructor like ArduinoBLE
+  - Add toString() function
+- Update BLECharacteristic
+  - Add constructor with properties
+  - Add constructor with max_len and fixed len
+  - Add writeFloat() and readFloat()
+
 ## 0.22.1 - 2021.05.26
 
 - Fix warnings "changing start of section .bss by 4 bytes"

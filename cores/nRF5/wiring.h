@@ -29,6 +29,8 @@ extern uint32_t bootloaderVersion;
 
 extern void init(void);
 
+uint32_t readResetReason(void);
+
 void enterSerialDfu(void);
 void enterOTADfu(void);
 void enterUf2Dfu(void);
@@ -41,6 +43,12 @@ static inline bool isInISR(void)
 {
   return (SCB->ICSR & SCB_ICSR_VECTACTIVE_Msk) != 0 ;
 }
+
+/*
+ * \brief Reads the on-chip temperature sensor, returning the temperature in degrees C
+ * with a resolution of 0.25 degrees.
+*/
+float readCPUTemperature( void );
 
 #ifdef __cplusplus
 }
